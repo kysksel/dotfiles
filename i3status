@@ -1,0 +1,56 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  color_good = "#50FA7B"
+  color_degraded = "#F1FA8C"
+  color_bad = "#FF5555"
+  interval = 5
+}
+
+order += "wireless _first_"
+#order += "ethernet _first_"
+order += "disk /"
+order += "cpu_usage"
+order += "load"
+order += "memory"
+order += "volume master"
+order += "tztime local"
+
+wireless _first_ {
+        format_up = "%quality Leak IP: %ip"
+        format_down = "NET: down"
+}
+
+ethernet _first_ {
+        format_up = "%ip (%speed)"
+        format_down = "ETH: down"
+}
+
+disk "/" {
+        format = "Porn Folder: %avail"
+}
+
+load {
+        format = "Hot Load: %1min"
+}
+
+memory {
+        format = "Mem: %used | %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S "
+}
+
+volume master {
+        format = "Vol: %volume"
+        format_muted = "Vol: muted (%volume)"
+        device = "pulse:alsa_output.pci-0000_00_1b.0.analog-stereo"
+}
+
+cpu_usage {
+        format= "Cpu: %usage"
+        max_threshold= 75
+}
