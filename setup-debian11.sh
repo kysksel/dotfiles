@@ -23,7 +23,7 @@ sudo apt install --no-install-recommends --no-install-suggests \
                  slick-greeter lxappearance pulseaudio alsa-utils \
                  pavucontrol network-manager qt5ct pcmanfm \
                  policykit-1-gnome xarchiver unzip unrar \
-                 suckless-tools git lightdm-settings stacer
+                 suckless-tools lightdm-settings stacer
 sudo apt install fonts-noto fonts-nanum arc-theme
 sudo systemctl enable lightdm
 
