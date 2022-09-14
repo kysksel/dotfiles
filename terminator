@@ -4,7 +4,7 @@
   [[default]]
     icon_bell = False
     cursor_color = "#aaaaaa"
-    font = CodeNewRoman Nerd Font Mono Book 10
+    font = CodeNewRoman Nerd Font Mono Book 11
     show_titlebar = False
     scrollbar_position = hidden
     use_system_font = False
