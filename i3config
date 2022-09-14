@@ -2,7 +2,7 @@
 set $mod Mod4
 font pango:JetBrainsMono NF Medium 7.2
 hide_edge_borders both
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/background/bg.png
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/bg.png
 exec_always --no-startup-id /lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 # Use pactl to adjust volume in PulseAudio.
@@ -154,5 +154,5 @@ bar {
     binding_mode       #FF5555 #FF5555 #F8F8F2
   }
     font pango:JetBrainsMono NF Medium 7.2
-    #status_command i3status -c /home/kysk/.config/i3/i3status.conf
+    status_command i3status -c ~/.config/i3/status
 }
