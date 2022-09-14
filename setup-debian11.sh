@@ -27,7 +27,8 @@ sudo apt install --no-install-recommends --no-install-suggests -y \
                  xfonts-base xfonts-75dpi slick-greeter\
                  xfonts-scalable fonts-noto fonts-nanum \
                  breeze-icon-theme gnome-icon-theme vlc \
-                 gnome-themes-extra p7zip-full desktop-base
+                 gnome-themes-extra p7zip-full desktop-base \
+                 gvfs fuse3
 sudo systemctl enable lightdm
 
 # Set Profile
