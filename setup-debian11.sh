@@ -73,10 +73,9 @@ mkdir -p ~/.icons
 mkdir -p ~/.fonts
 wget -O themes.zip https://github.com/dracula/gtk/archive/master.zip
 wget -O icons.zip https://github.com/dracula/gtk/files/5214870/Dracula.zip
-wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Iosevka.zip
 unzip themes.zip -d ~/.themes
 unzip icons.zip -d ~/.icons
-unzip fonts.zip -d ~/.fonts
+tar -xf fonts.tar.xz -C ~/.fonts
 mv ~/.themes/gtk-master ~/.themes/Dracula
 
 sudo cp rc.local /etc/
