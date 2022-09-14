@@ -17,15 +17,17 @@ sudo apt autoremove --purge blue* cups*
 # Install Minimal Package
 sudo apt install --no-install-recommends --no-install-suggests \
                  xserver-xorg-core xserver-xorg-video-intel \
-                 xserver-xorg-input-all xserver-xorg-input-libinput \
-                 x11-xserver-utils x11-xkb-utils x11-utils xinit \
-                 intel-microcode terminator i3 i3status feh lightdm \
-                 slick-greeter lxappearance pulseaudio alsa-utils \
+                 xserver-xorg-input-libinput x11-xserver-utils \
+                 x11-xkb-utils x11-utils xinit intel-microcode \
+                 terminator i3 i3status feh lightdm \
+                 lxappearance pulseaudio alsa-utils \
                  pavucontrol qt5ct pcmanfm ntfs-3g\
                  policykit-1-gnome xarchiver unzip unrar \
-                 suckless-tools lightdm-settings stacer
-sudo apt install fonts-noto fonts-nanum arc-theme papirus-icon-theme \
-                 breeze-icon-theme  gnome-icon-theme
+                 suckless-tools lightdm-settings stacer \
+                 xfonts-base xfonts-100dpi xfonts-75dpi \
+                 xfonts-scalable fonts-noto fonts-nanum \
+                 breeze-icon-theme gnome-icon-theme \
+                 xserver-xorg-legacy
 sudo systemctl enable lightdm
 
 # Set Profile
