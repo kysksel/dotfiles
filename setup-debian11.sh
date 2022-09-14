@@ -12,10 +12,10 @@ sudo free -h
 # /swapfile swap swap defaults 0 0
 
 # Remove unnecesarry package
-sudo apt autoremove --purge blue* cups*
+sudo apt autoremove --purge -y blue* cups*
 
 # Install Minimal Package
-sudo apt install --no-install-recommends --no-install-suggests \
+sudo apt install --no-install-recommends --no-install-suggests -y \
                  xserver-xorg-core xserver-xorg-video-intel \
                  xserver-xorg-input-libinput x11-xserver-utils \
                  x11-xkb-utils x11-utils xinit intel-microcode \
@@ -24,10 +24,9 @@ sudo apt install --no-install-recommends --no-install-suggests \
                  pavucontrol qt5ct pcmanfm ntfs-3g\
                  policykit-1-gnome xarchiver unzip unrar \
                  suckless-tools lightdm-settings stacer \
-                 xfonts-base xfonts-100dpi xfonts-75dpi \
+                 xfonts-base xfonts-75dpi slick-greeter\
                  xfonts-scalable fonts-noto fonts-nanum \
-                 breeze-icon-theme gnome-icon-theme \
-                 xserver-xorg-legacy
+                 breeze-icon-theme gnome-icon-theme
 sudo systemctl enable lightdm
 
 # Set Profile
@@ -64,7 +63,7 @@ cp terminator ~/.config/terminator/config
 
 # Install Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
 echo "google-chrome-stable --force-dark-mode" | sudo tee /bin/google
 sudo chmod +x /bin/google
 
@@ -74,7 +73,7 @@ mkdir -p ~/.icons
 mkdir -p ~/.fonts
 wget -O themes.zip https://github.com/dracula/gtk/archive/master.zip
 wget -O icons.zip https://github.com/dracula/gtk/files/5214870/Dracula.zip
-wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip
+wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Iosevka.zip
 unzip themes.zip -d ~/.themes
 unzip icons.zip -d ~/.icons
 unzip fonts.zip -d ~/.fonts
