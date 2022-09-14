@@ -26,7 +26,7 @@ sudo apt install --no-install-recommends --no-install-suggests -y \
                  suckless-tools lightdm-settings stacer \
                  xfonts-base xfonts-75dpi slick-greeter\
                  xfonts-scalable fonts-noto fonts-nanum \
-                 breeze-icon-theme gnome-icon-theme
+                 breeze-icon-theme gnome-icon-theme vlc
 sudo systemctl enable lightdm
 
 # Set Profile
