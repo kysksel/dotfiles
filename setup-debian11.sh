@@ -50,11 +50,6 @@ alias br7='echo 6 | sudo tee /sys/class/backlight/acpi_video0/brightness  && ech
 alias br8='echo 7 | sudo tee /sys/class/backlight/acpi_video0/brightness  && echo 900000 | sudo tee /sys/class/backlight/intel_backlight/brightness'
 alias 2mon='xrandr --auto --output VGA-1 --right-of LVDS-1'
 alias 1mon='xrandr --auto'
-
-alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
-alias art='sail art'
-alias npm='sail npm'
-alias composer='sail composer'
 EOF
 
 # Set i3WM
