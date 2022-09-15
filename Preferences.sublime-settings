@@ -1,0 +1,30 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+	"theme": "Adaptive.sublime-theme",
+	"font_face": "Fira Code Medium",
+	"font_options": [
+		"gray_antialias",
+		"dlig"
+	],
+	"indent_to_bracket": true,
+	"caret_style": "smooth",
+	"block_caret": true,
+	"line_padding_top": 4,
+	"line_padding_bottom": 4,
+	"indent_guide_options": [
+		"draw_normal",
+		"draw_active"
+	],
+	"trim_trailing_white_space_on_save": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"save_on_focus_lost": true,
+	"drag_text": false,
+	"tree_animation_enabled": false,
+	"animation_enabled": false,
+	"hide_new_tab_button": true,
+	"index_exclude_gitignore": false,
+}
