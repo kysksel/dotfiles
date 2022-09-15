@@ -17,6 +17,11 @@ newgrp docker
 sudo systemctl disable docker.service
 sudo systemctl disable containerd.service
 
+# insert the new value into the system config
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf 
+sudo sysctl -p
+
+
 cat <<EOF >> ~/.bashrc
 
 alias 2mon='xrandr --auto --output VGA-1 --right-of LVDS-1'
