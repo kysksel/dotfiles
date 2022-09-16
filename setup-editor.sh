@@ -24,8 +24,8 @@ sudo sysctl -p
 
 cat <<EOF >> ~/.bashrc
 
-alias 2mon='xrandr --auto --output VGA-1 --right-of LVDS-1'
 alias 1mon='xrandr --auto'
+alias 2mon='1mon && xrandr --auto --output VGA-1 --right-of LVDS-1'
 
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias art='sail art'
