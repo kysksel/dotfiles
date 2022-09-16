@@ -91,3 +91,5 @@ sudo chmod +x /etc/rc.local
 sudo systemctl daemon-reload
 sudo systemctl start rc-local
 sudo systemctl status rc-local
+
+git config --global init.defaultBranch main
