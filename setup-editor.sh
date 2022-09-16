@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo apt install --no-install-recommends --no-install-suggests gpg
+sudo apt install --no-install-recommends --no-install-suggests -y gpg
 
 wget -qO - https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive.gpg
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sublimehq-archive.gpg
@@ -9,7 +9,7 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/docker-archive.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
 sudo apt update
-sudo apt install sublime-text sublime-merge docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt install -y sublime-text sublime-merge docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 wget https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v3.6.2/Beekeeper-Studio-3.6.2.AppImage
 sudo mkdir /opt/appimages
