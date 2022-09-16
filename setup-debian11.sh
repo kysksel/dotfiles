@@ -24,11 +24,13 @@ sudo apt install --no-install-recommends --no-install-suggests -y \
                  pavucontrol qt5ct pcmanfm ntfs-3g\
                  policykit-1-gnome xarchiver unzip unrar \
                  suckless-tools lightdm-settings stacer \
-                 xfonts-base xfonts-75dpi slick-greeter\
+                 xfonts-base slick-greeter\
                  xfonts-scalable fonts-noto fonts-nanum \
                  breeze-icon-theme gnome-icon-theme vlc \
                  gnome-themes-extra p7zip-full desktop-base \
-                 gvfs fuse3
+                 gvfs fuse3 fonts-font-awesome fonts-powerline \
+                 fonts-ubuntu fonts-liberation2 fonts-liberation \
+                 fonts-terminus fonts-cascadia-code gpg
 sudo systemctl enable lightdm
 
 # Set Profile
@@ -48,8 +50,10 @@ alias br5='echo 4 | sudo tee /sys/class/backlight/acpi_video0/brightness  && ech
 alias br6='echo 5 | sudo tee /sys/class/backlight/acpi_video0/brightness  && echo 700000 | sudo tee /sys/class/backlight/intel_backlight/brightness'
 alias br7='echo 6 | sudo tee /sys/class/backlight/acpi_video0/brightness  && echo 800000 | sudo tee /sys/class/backlight/intel_backlight/brightness'
 alias br8='echo 7 | sudo tee /sys/class/backlight/acpi_video0/brightness  && echo 900000 | sudo tee /sys/class/backlight/intel_backlight/brightness'
-alias 2mon='xrandr --auto --output VGA-1 --right-of LVDS-1'
 alias 1mon='xrandr --auto'
+alias 2mon='1mon && xrandr --auto --output VGA-1 --right-of LVDS-1'
+alias br20='xrandr --output VGA-1 --brightness 0.6'
+alias br21='xrandr --output VGA-1 --brightness 1'
 EOF
 
 # Set i3WM
