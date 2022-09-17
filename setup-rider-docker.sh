@@ -8,6 +8,13 @@
 #sudo apt update
 #sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
+wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+
+sudo apt update
+sudo apt install -y dotnet-sdk-6.0
+
 wget https://download.jetbrains.com/rider/JetBrains.Rider-2022.2.3.tar.gz
 sudo tar -xzf JetBrains.Rider-2022.2.3.tar.gz -C /opt
 sudo mv "/opt/JetBrains Rider-2022.2.3" /opt/Rider-2022.2.3
