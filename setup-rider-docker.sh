@@ -10,7 +10,8 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 wget https://download.jetbrains.com/rider/JetBrains.Rider-2022.2.3.tar.gz
 sudo tar -xzf JetBrains.Rider-2022.2.3.tar.gz -C /opt
-#sudo ln -s /opt/appimages/Beekeeper-Studio-3.6.2.AppImage /bin/beekeeper
+sudo mv "/opt/JetBrains Rider-2022.2.3" /opt/Rider-2022.2.3
+sudo ln -s /opt/Rider-2022.2.3/bin/rider.sh /bin/rider
 
 sudo usermod -aG docker $USER
 newgrp docker
