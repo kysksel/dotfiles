@@ -7,3 +7,6 @@ cp i3status ~/.config/i3/status
 #cp qt5config ~/.config/qt5ct/qt5ct.conf
 #cp settings.ini ~/.config/gtk-3.0
 #cp terminator ~/.config/terminator/config
+
+sudo systemctl disable console-setup.service
+sudo systemctl disable keyboard-setup.service 
