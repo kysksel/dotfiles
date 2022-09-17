@@ -13,6 +13,13 @@ sudo tar -xzf JetBrains.Rider-2022.2.3.tar.gz -C /opt
 sudo mv "/opt/JetBrains Rider-2022.2.3" /opt/Rider-2022.2.3
 sudo ln -s /opt/Rider-2022.2.3/bin/rider.sh /bin/rider
 
+unzip useragent.zip
+mv .useragent ~
+
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED" | sudo tee -a /opt/Rider-2022.2.3/bin/rider64.vmoptions
+echo "--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED" | sudo tee -a /opt/Rider-2022.2.3/bin/rider64.vmoptions
+echo "-javaagent:$HOME/.useragent/ja-netfilter.jar=jetbrains" | sudo tee -a /opt/Rider-2022.2.3/bin/rider64.vmoptions
+
 sudo usermod -aG docker $USER
 newgrp docker
 
