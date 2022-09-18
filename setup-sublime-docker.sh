@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 sudo apt install --no-install-recommends --no-install-suggests -y gpg
 
