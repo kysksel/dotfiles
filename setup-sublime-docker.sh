@@ -9,7 +9,7 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/docker-archive.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
 sudo apt update
-sudo apt install -y sublime-text sublime-merge docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt install -y sublime-text=4126 sublime-merge=2077 docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 wget https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v3.6.2/Beekeeper-Studio-3.6.2.AppImage
 sudo mkdir /opt/appimages
@@ -31,6 +31,47 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias art='sail art'
 alias npm='sail npm'
 alias composer='sail composer'
+
+laravel() {
+    docker info > /dev/null 2>&1
+
+    # Ensure that Docker is running...
+    if [ $? -ne 0 ]; then
+        echo "Docker is not running."
+
+        exit 1
+    fi
+
+    docker run --rm \
+        --pull=always \
+        -v "$(pwd)":/opt \
+        -w /opt \
+        laravelsail/php81-composer:latest \
+        bash -c "laravel new $1 && cd $1 && php ./artisan sail:install --with=mysql "
+
+    cd $1
+
+    ./vendor/bin/sail pull mysql
+    ./vendor/bin/sail build
+
+    CYAN='\033[0;36m'
+    LIGHT_CYAN='\033[1;36m'
+    WHITE='\033[1;37m'
+    NC='\033[0m'
+
+    echo ""
+
+    if sudo -n true 2>/dev/null; then
+        sudo chown -R $USER: .
+        echo -e "${WHITE}Get started with:${NC} cd $1 && ./vendor/bin/sail up"
+    else
+        echo -e "${WHITE}Please provide your password so we can make some final adjustments to your application's permissions.${NC}"
+        echo ""
+        sudo chown -R $USER: .
+        echo ""
+        echo -e "${WHITE}Thank you! We hope you build something incredible. Dive in with:${NC} cd $1 && ./vendor/bin/sail up"
+    fi
+}
 EOF
 
 cd /opt/sublime_text
