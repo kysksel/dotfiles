@@ -36,20 +36,15 @@ laravel() {
     docker info > /dev/null 2>&1
 
     # Ensure that Docker is running...
-    if [ $? -ne 0 ]; then
+    if [ \$? -ne 0 ]; then
         echo "Docker is not running."
 
         exit 1
     fi
 
-    docker run --rm \
-        --pull=always \
-        -v "$(pwd)":/opt \
-        -w /opt \
-        laravelsail/php81-composer:latest \
-        bash -c "laravel new $1 && cd $1 && php ./artisan sail:install --with=mysql "
+    docker run --rm --pull=always -v "\$(pwd)":/opt -w /opt laravelsail/php81-composer:latest bash -c "laravel new \$1 && cd \$1 && php ./artisan sail:install --with=mysql "
 
-    cd $1
+    cd \$1
 
     ./vendor/bin/sail pull mysql
     ./vendor/bin/sail build
@@ -62,14 +57,14 @@ laravel() {
     echo ""
 
     if sudo -n true 2>/dev/null; then
-        sudo chown -R $USER: .
-        echo -e "${WHITE}Get started with:${NC} cd $1 && ./vendor/bin/sail up"
+        sudo chown -R \$USER: .
+        echo -e "\${WHITE}Get started with:\${NC} cd \$1 && ./vendor/bin/sail up"
     else
-        echo -e "${WHITE}Please provide your password so we can make some final adjustments to your application's permissions.${NC}"
+        echo -e "\${WHITE}Please provide your password so we can make some final adjustments to your application's permissions.\${NC}"
         echo ""
-        sudo chown -R $USER: .
+        sudo chown -R \$USER: .
         echo ""
-        echo -e "${WHITE}Thank you! We hope you build something incredible. Dive in with:${NC} cd $1 && ./vendor/bin/sail up"
+        echo -e "\${WHITE}Thank you! We hope you build something incredible. Dive in with:\${NC} cd \$1 && ./vendor/bin/sail up"
     fi
 }
 EOF
