@@ -18,7 +18,6 @@ sudo chmod +x /opt/appimages/Beekeeper-Studio-3.6.2.AppImage
 sudo ln -s /opt/appimages/Beekeeper-Studio-3.6.2.AppImage /bin/beekeeper
 
 sudo usermod -aG docker $USER
-newgrp docker
 
 sudo systemctl disable docker.service
 sudo systemctl disable containerd.service
