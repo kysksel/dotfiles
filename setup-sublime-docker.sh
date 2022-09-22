@@ -28,9 +28,20 @@ sudo sysctl -p
 cat <<EOF >> ~/.bashrc
 
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+alias artisan='sail artisan'
 alias art='sail art'
 alias npm='sail npm'
+alias node='sail node'
 alias composer='sail composer'
+
+alias gi='git init && git add . && git commit -m initial'
+alias ga='git add'
+alias gaa='git add .'
+alias gc='gaa && git commit -m'
+alias gs='git status'
+alias gl='git log --oneline'
+alias gp='git push -u origin/main'
+alias gr='git reset --hard && git clean -df'
 
 laravel() {
     docker info > /dev/null 2>&1
