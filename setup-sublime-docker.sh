@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt install --no-install-recommends --no-install-suggests -y gpg
-
 wget -qO - https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive.gpg
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sublimehq-archive.gpg
 
@@ -25,6 +23,12 @@ sudo systemctl disable containerd.service
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf 
 sudo sysctl -p
 
+export NVM_DIR="$HOME/.nvm" && (
+  git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+  cd "$NVM_DIR"
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+) && \. "$NVM_DIR/nvm.sh"
+
 cat <<EOF >> ~/.bashrc
 
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
@@ -42,6 +46,10 @@ alias gs='git status'
 alias gl='git log --oneline'
 alias gp='git push -u origin/main'
 alias gr='git reset --hard && git clean -df'
+
+export NVM_DIR="\$HOME/.nvm"
+[ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
+[ -s "\$NVM_DIR/bash_completion" ] && \. "\$NVM_DIR/bash_completion"
 
 laravel() {
     docker info > /dev/null 2>&1
