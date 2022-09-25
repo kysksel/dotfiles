@@ -10,3 +10,16 @@ cp i3status ~/.config/i3/status
 
 sudo systemctl disable console-setup.service
 sudo systemctl disable keyboard-setup.service 
+
+
+mode "(Sublime (Merge (Terminal" {
+        bindsym S exec subl
+        bindsym M exec smerge
+        bindsym T exec terminator
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym F1 mode "default"
+}
+
+bindsym F1 mode "(Sublime (Merge (Terminal"
