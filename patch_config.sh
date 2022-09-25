@@ -11,7 +11,7 @@ cp i3status ~/.config/i3/status
 sudo systemctl disable console-setup.service
 sudo systemctl disable keyboard-setup.service 
 
-mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
+mode "Exit: Logout, Reboot, Poweroff" {
         bindsym r exec systemctl reboot
         bindsym l exit
         bindsym p exec systemctl poweroff
@@ -21,7 +21,7 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
         bindsym Escape mode "default"
 }
 
-mode "(Sublime (Merge (Terminal" {
+mode "Sublime, Merge, Terminal" {
         bindsym s exec subl
         bindsym m exec smerge
         bindsym t exec terminator
@@ -31,4 +31,4 @@ mode "(Sublime (Merge (Terminal" {
         bindsym F1 mode "default"
 }
 
-bindsym F1 mode "(Sublime (Merge (Terminal"
+bindsym F1 mode "Sublime, Merge, Terminal"
