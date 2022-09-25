@@ -11,6 +11,15 @@ cp i3status ~/.config/i3/status
 sudo systemctl disable console-setup.service
 sudo systemctl disable keyboard-setup.service 
 
+mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
+        bindsym r exec systemctl reboot
+        bindsym l exit
+        bindsym p exec systemctl poweroff
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 mode "(Sublime (Merge (Terminal" {
         bindsym S exec subl
