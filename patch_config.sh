@@ -22,9 +22,9 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
 }
 
 mode "(Sublime (Merge (Terminal" {
-        bindsym S exec subl
-        bindsym M exec smerge
-        bindsym T exec terminator
+        bindsym s exec subl
+        bindsym m exec smerge
+        bindsym t exec terminator
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
