@@ -25,12 +25,16 @@ sudo apt install --no-install-recommends --no-install-suggests -y \
                  policykit-1-gnome xarchiver unzip unrar \
                  suckless-tools lightdm-settings stacer \
                  xfonts-base slick-greeter\
-                 xfonts-scalable fonts-noto fonts-nanum \
+                 xfonts-scalable fonts-nanum \
                  breeze-icon-theme gnome-icon-theme vlc \
                  gnome-themes-extra p7zip-full desktop-base \
-                 gvfs fuse3 fonts-font-awesome fonts-powerline \
-                 fonts-ubuntu fonts-liberation2 fonts-liberation \
-                 fonts-terminus fonts-cascadia-code gpg
+                 gvfs fuse3 fonts-firacode \
+                 fonts-ubuntu gpg \
+                 fonts-noto fonts-noto-cjk-extra fonts-noto-core \
+                 fonts-noto-hinted fonts-noto-ui-core \
+                 fonts-noto-unhinted fonts-noto-cjk fonts-noto-color-emoji \
+                 fonts-noto-extra fonts-noto-mono fonts-noto-ui-extra
+                 
 sudo systemctl enable lightdm
 
 # Set Profile
@@ -70,10 +74,11 @@ cp settings.ini ~/.config/gtk-3.0
 cp terminator ~/.config/terminator/config
 
 # Install Google Chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install -y ./google-chrome-stable_current_amd64.deb
-echo "google-chrome-stable --force-dark-mode" | sudo tee /bin/google
-sudo chmod +x /bin/google
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#sudo apt install -y ./google-chrome-stable_current_amd64.deb
+sudo apt install -y chromium
+echo "chromium --force-dark-mode" | sudo tee /bin/chrome
+sudo chmod +x /bin/chrome
 
 # Set Themes and Icons
 mkdir -p ~/.themes
