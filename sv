@@ -122,14 +122,14 @@ fi
 
 # Define environment variables...
 export APP_PORT=${APP_PORT:-80}
-export APP_SERVICE=${APP_SERVICE:-"olami.web"}
+export APP_SERVICE=${APP_SERVICE:-"skuza.labs"}
 export DB_PORT=${DB_PORT:-3306}
 export WWWUSER=${WWWUSER:-$UID}
 export WWWGROUP=${WWWGROUP:-$(id -g)}
 
 export SERV_FILES=${SERV_FILES:-""}
 export SERV_SHARE_DASHBOARD=${SERV_SHARE_DASHBOARD:-4040}
-export SERV_SHARE_SERVER_HOST=${SERV_SHARE_SERVER_HOST:-"laravel-sail.site"}
+export SERV_SHARE_SERVER_HOST=${SERV_SHARE_SERVER_HOST:-"laravel-skuza.site"}
 export SERV_SHARE_SERVER_PORT=${SERV_SHARE_SERVER_PORT:-8080}
 export SERV_SHARE_SUBDOMAIN=${SERV_SHARE_SUBDOMAIN:-""}
 
