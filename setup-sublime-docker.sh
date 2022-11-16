@@ -7,13 +7,13 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/docker-archive.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
 sudo apt update
-sudo apt install -y sublime-text=4126 sublime-merge=2077 docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt install -y sublime-text=4143 sublime-merge=2079 docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-wget https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v3.6.2/Beekeeper-Studio-3.6.2.AppImage
+wget https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v3.7.9/Beekeeper-Studio-3.7.9.AppImage
 sudo mkdir /opt/appimages
-sudo mv Beekeeper-Studio-3.6.2.AppImage /opt/appimages
-sudo chmod +x /opt/appimages/Beekeeper-Studio-3.6.2.AppImage
-sudo ln -s /opt/appimages/Beekeeper-Studio-3.6.2.AppImage /bin/beekeeper
+sudo mv Beekeeper-Studio-3.7.9.AppImage /opt/appimages
+sudo chmod +x /opt/appimages/Beekeeper-Studio-3.7.9.AppImage
+sudo ln -s /opt/appimages/Beekeeper-Studio-3.7.9.AppImage /bin/beekeeper
 
 sudo usermod -aG docker $USER
 

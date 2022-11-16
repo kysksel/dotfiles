@@ -9,6 +9,7 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 sudo free -h
 # Make Permanent
+echo /swapfile swap swap defaults 0 0 | sudo tee -a /etc/fstab
 # /swapfile swap swap defaults 0 0
 
 # Remove unnecesarry package
